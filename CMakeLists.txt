@@ -1,5 +1,5 @@
-# Version 3.8 is required for c++17
-cmake_minimum_required(VERSION 3.9)
+# Version 3.12 is required for Object library linking
+cmake_minimum_required(VERSION 3.12)
 project(OTTO VERSION 0.0.1 LANGUAGES CXX C)
 
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -35,7 +35,7 @@ if (DEFINED CMAKE_CXX_FLAGS_DEBUG_INIT AND
     "${CMAKE_CXX_FLAGS_DEBUG_INIT}" STREQUAL "${CMAKE_CXX_FLAGS_DEBUG}")
     # Overwrite the init values choosen by CMake
     if (CMAKE_COMPILER_IS_GNUCXX)
-        
+
     endif()
 endif()
 
