@@ -6,6 +6,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_BUILD_TYPE Debug) 
+set(CMAKE_CXX_FLAGS_DEBUG "-ggdb3 -O0" CACHE STRING "" FORCE)
 
 include(cmake/utils.cmake)
 
@@ -33,7 +35,7 @@ if (DEFINED CMAKE_CXX_FLAGS_DEBUG_INIT AND
     "${CMAKE_CXX_FLAGS_DEBUG_INIT}" STREQUAL "${CMAKE_CXX_FLAGS_DEBUG}")
     # Overwrite the init values choosen by CMake
     if (CMAKE_COMPILER_IS_GNUCXX)
-        set(CMAKE_CXX_FLAGS_DEBUG "-ggdb3 -O0" CACHE STRING "" FORCE)
+        
     endif()
 endif()
 
