@@ -33,7 +33,8 @@ static bool debuggerIsAttached()
   return false;
 }
 
-static bool doctestDebuggerCheck() {
+static bool doctestDebuggerCheck()
+{
   static bool res = debuggerIsAttached();
   return res;
 }

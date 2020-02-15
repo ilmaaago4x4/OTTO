@@ -19,7 +19,8 @@
 
 namespace otto::services {
 
-  RTAudioAudioManager::RTAudioAudioManager()
+  RTAudioAudioManager::RTAudioAudioManager(int in_device, int out_device)
+    : device_in_(in_device), device_out_(out_device)
   {
     init_audio();
     try {
@@ -159,10 +160,10 @@ namespace otto::services {
     if (enable_input) {
       // Deinterleave. TODO: Get real stereo data
       for (int i = 0; i < nframes; i++) {
-      in_buf[0][i] = in_data[2 * i];
-      in_buf[1][i] = in_data[2 * i + 1];
-      //in_buf[0][i] = in_data[i];
-      //in_buf[1][i] = in_data[i];
+        in_buf[0][i] = in_data[2 * i];
+        in_buf[1][i] = in_data[2 * i + 1];
+        // in_buf[0][i] = in_data[i];
+        // in_buf[1][i] = in_data[i];
       }
     } else {
       // Is this necessary? We could also just not even add it to the output.
